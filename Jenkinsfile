@@ -9,6 +9,9 @@ environment {
 }    
   stages {
     stage('SonarQube analysis') {
+    tools {
+        jdk "java21" // the name you have given the JDK installation in Global Tool Configuration
+    }
     environment {
       scannerHome = tool 'mahesh01-sonar-scanner'
     }
