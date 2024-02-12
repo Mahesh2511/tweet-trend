@@ -1,4 +1,4 @@
-def registry = 'https://mahesh708383.jfrog.io/]'
+def registry = 'https://mahesh708383.jfrog.io'
 pipeline {
     agent {
         node {
@@ -39,7 +39,7 @@ environment {
              sh "mvn clean deploy"
             }
     }    
-    
+
     stage("Jar Publish") {
         steps {
             script {
