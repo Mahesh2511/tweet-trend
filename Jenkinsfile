@@ -1,4 +1,6 @@
 def registry = 'https://mahesh708383.jfrog.io'
+def imageName = 'mahesh708383.jfrog.io/ecoz-docker-local/ttrend'
+def version   = '2.1.4'
 pipeline {
     agent {
         node {
@@ -64,6 +66,29 @@ environment {
             
             }
         }   
-    }                     
+    }  
+
+    stage(" Docker Build ") {
+      steps {
+        script {
+           echo '<--------------- Docker Build Started --------------->'
+           app = docker.build(imageName+":"+version)
+           echo '<--------------- Docker Build Ends --------------->'
+        }
+      }
+    }
+
+            stage (" Docker Publish "){
+        steps {
+            script {
+               echo '<--------------- Docker Publish Started --------------->'  
+                docker.withRegistry(registry, 'artifacts'){
+                    app.push()
+                }    
+               echo '<--------------- Docker Publish Ended --------------->'  
+            }
+        }
+    }
+
   }
 }
