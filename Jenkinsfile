@@ -1,6 +1,6 @@
 def registry = 'https://mahesh708383.jfrog.io'
 def imageName = 'mahesh708383.jfrog.io/ecoz-docker-local/ttrend'
-def version   = '2.1.4'
+def version   = '2.1.5'
 pipeline {
     agent {
         node {
