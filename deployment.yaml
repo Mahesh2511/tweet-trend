@@ -14,10 +14,10 @@ spec:
         app:  valaxy-rtp
     spec:
       imagePullSecrets:
-      - name: jfrogcred 
+      - name: jfrogcred
       containers:
       - name:  valaxy-rtp
-        image: valaxy05.jfrog.io/valaxy-docker/ttrend:2.1.4
+        image: mahesh708383.jfrog.io/ecoz-docker-local/ttrend:2.1.4
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
@@ -29,5 +29,4 @@ spec:
         - name: ACCESS_TOKEN
           value: "9703354-52rXHD6EeOQeYyhtNz1w8UVOgbcLcgOo4O7MB6WV3"
         - name: ACCESS_TOKEN_SECRET
-          value: "zBThlZDEp8qnu7NwwdHNth8eg3Rf9zqbvUEFUTaZtN2SF"
-
+          value: "zBThlZDEp8qnu7NwwHNth8eg3Rf9zqbvUEFUTaZtN2SF"
